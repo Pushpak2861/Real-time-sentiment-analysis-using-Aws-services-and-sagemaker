@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  streamlit-app:
+    build: 
+      context: .
+      dockerfile: dockerfile
+    container_name: streamlit-dynamodb-app 
+    ports:
+      - "8501:8501"
+    environment:
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_REGION: "eu-west-1"
+    volumes:
+      - .:/app
+
