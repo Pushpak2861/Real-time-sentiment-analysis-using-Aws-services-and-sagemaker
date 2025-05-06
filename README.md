@@ -2,6 +2,9 @@
 
 This project implements a fully automated real-time sentiment analysis pipeline using AWS services including Lambda, S3, SageMaker, DynamoDB, and Streamlit. It classifies customer review sentiments into five levels from Very Positive to Very Negative and supports deployment and visualization via a Dockerized Streamlit app.
 
+![ai_ecosystem drawio](https://github.com/user-attachments/assets/9cf37d71-0884-491e-a48c-e44f51da4b15)
+
+
 ## Architecture Overview
 
 Customer uploads a CSV file containing product reviews to an S3 bucket.
