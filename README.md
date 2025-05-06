@@ -2,7 +2,7 @@
 
 This project implements a fully automated real-time sentiment analysis pipeline using AWS services including Lambda, S3, SageMaker, DynamoDB, and Streamlit. It classifies customer review sentiments into five levels from Very Positive to Very Negative and supports deployment and visualization via a Dockerized Streamlit app.
 
-## 🧭 Architecture Overview
+## Architecture Overview
 
 Customer uploads a CSV file containing product reviews to an S3 bucket.
 
@@ -18,7 +18,7 @@ An IAM user with CLI-only permissions and DynamoDB access can retrieve the table
 
 The results are visualized via a Dockerized Streamlit dashboard that pulls data via AWS CLI.
 
-## 🚀 Technologies Used
+## Technologies Used
 AWS S3
 
 AWS Lambda (2 triggers)
@@ -35,10 +35,10 @@ Docker (for containerized deployment)
 
 AWS CLI (to query DynamoDB)
 
-## 📁 File Flow Diagram
+## File Flow Diagram
 upload.csv (S3 Bucket A) ⟶ Lambda Trigger #1 ⟶ SageMaker Endpoint ⟶ output.csv (S3 Bucket B) ⟶ Lambda Trigger #2 ⟶ DynamoDB ⟶ AWS CLI ⟶ Streamlit (Dockerized)
 
-## 📊 Model Performance
+## Model Performance
 Two models were evaluated for sentiment classification:
 
 With 3-class reduction (Positive, Neutral, Negative): 70% similarity
@@ -47,7 +47,7 @@ With 2-class reduction (Positive vs Negative): 86% similarity
 
 This indicates consistency across models improves as the granularity of the sentiment labels is reduced.
 
-## 🛠️ Setup Instructions
+## Setup Instructions
 Clone the repository:
 ```bash
 git clone https://github.com/your-username/aws-sentiment-pipeline.git
@@ -63,14 +63,14 @@ docker run -p 8501:8501 sentiment-dashboard
 aws dynamodb scan --table-name SentimentResults --region your-region
 ```
 
-## 📦 Streamlit Features
+##  Streamlit Features
 Dashboard displaying sentiment distribution
 
 Category-wise sentiment filter
 
 Option to download or export processed data
 
-## 📌 Future Enhancements
+## Future Enhancements
 Integrate time-series sentiment trend analysis
 
 Add support for multiple product categories
